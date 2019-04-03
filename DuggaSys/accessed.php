@@ -1,6 +1,7 @@
 <?php
 #comment
 #Vad som
+#hejsan
 	session_start();
 	include_once "../../coursesyspw.php";
 	include_once "../Shared/sessions.php";
