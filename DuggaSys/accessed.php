@@ -5,7 +5,7 @@
 	pdoConnect();
 ?><!DOCTYPE html>
 <html lang="sv">
-<head>
+<head> 
 	<link rel="icon" type="image/ico" href="../Shared/icons/favicon.ico"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,7 +25,7 @@
 		include '../Shared/navheader.php';
 	?>
 
-	<!-- content START -->
+	<!-- content S TART -->
 		<div id="wrappall" style="border-top:0px;display:table; table-layout:auto;padding:0px 10px 0px 10px;border:none;width:auto;">
 		<div id="newbutton">
 			<?php
