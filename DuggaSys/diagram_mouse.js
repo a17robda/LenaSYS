@@ -244,7 +244,7 @@ function mousedownevt(ev) {
         md = 0;
     }
 
-    if (uimode == "CreateLine") {
+    if (uimode == "CreateLine" || uimode == "CreateUMLLine") {
 
         md = 4;            // Box select or Create mode.
         startMouseCoordinateX = currentMouseCoordinateX;
