@@ -198,7 +198,24 @@ function mousemoveevt(ev, t) {
                 crossStrokeStyle2 = "rgba(255, 102, 68, 0.0)";
                 crossFillStyle = "rgba(255, 102, 68, 0.0)";
             }
-        } else {
+        } else if (uimode == "CreateUMLLine") { // Testing to add lines between UML classes as separate mode
+            var breakpoint1 = startMouseCoordinateX + 30; // breakpoint1, right after start point
+            var breakpoint2 = currentMouseCoordinateX - 30; // breakpoint2, right before end point
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            ctx.moveTo(startMouseCoordinateX, startMouseCoordinateY);
+            ctx.lineTo(breakpoint1, startMouseCoordinateY); // draws to breakpoint 1
+            ctx.lineTo(breakpoint1, currentMouseCoordinateY); // draws to breakpoint 2
+            ctx.lineTo(currentMouseCoordinateX, currentMouseCoordinateY);
+            ctx.strokeStyle = "#000";
+            ctx.stroke();
+            ctx.setLineDash([]);
+            if (ghostingCrosses == true) {
+                crossStrokeStyle1 = "rgba(255, 102, 68, 0.0)";
+                crossStrokeStyle2 = "rgba(255, 102, 68, 0.0)";
+                crossFillStyle = "rgba(255, 102, 68, 0.0)";
+            }
+          } else {
             ctx.setLineDash([3, 3]);
             ctx.beginPath(1);
             ctx.moveTo(startMouseCoordinateX, startMouseCoordinateY);
