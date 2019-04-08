@@ -194,7 +194,7 @@ window.onkeyup = function(event) {
     if(event.which == 17 || event.which == 91) {
         ctrlIsClicked = false;
     }
-  }
+}
 
 //Handler for when pressing arrow keys
 function arrowKeyPressed(key){
@@ -1030,8 +1030,6 @@ consloe.log = function(gobBluth) {
     document.getElementById("consloe").innerHTML = ((JSON.stringify(gobBluth) + "<br>") + document.getElementById("consloe").innerHTML);
 }
 
-
-
 //debugMode this function show and hides crosses and the consol.
 var ghostingCrosses = false; // used to repressent a switch for whenever the debugMode is enabled or not.
 function debugMode() {
@@ -1201,7 +1199,6 @@ function lockSelected(){
         selected_objects[i].locked = !selected_objects[i].locked;
     }
 }
-
 
 function align(mode){
     for(var i = 0; i < diagram.length; i++){
