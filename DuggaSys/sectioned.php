@@ -82,9 +82,6 @@
 								<li class='access'>
 										<button class='submit-button menuButton access' onclick='closeWindows(); navigatePage("accessed.php");' title='Give students access to the selected version'>Access</button>
 								</li>
-								<li class='mail'>
-										<button class='submit-button menuButton access' onclick='mail();' title='TEST'>Mail</button>
-								</li>
 							</ul>
 						</div>
 					</td>
@@ -111,7 +108,7 @@
 					</td>
 					<td class='access menuButton' style='display: inline-block;'>
 						<div class='access menuButton'>
-							<input type='button' value='Mail' class='submit-button' title='TEST MAIL' onclick='navigatePage("accessed.php");'/>
+							<input type='button' value='Mail' class='submit-button' title='Mail' onclick='Mail();'/>
 						</div>
 					</td>
 				</tr>
