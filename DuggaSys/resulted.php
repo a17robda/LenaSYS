@@ -58,14 +58,14 @@ pdoConnect();
         <label>Betygsskala</label>
         <!--<input id="ladgradescale" type="text" style="font-size:12px;">-->
         <select id="ladgradescale">
-          <option value="U-G-VGgg" selected>U-G-VG</option>
-          <option value="U-GGG">U-G</option>
-          <option value="U-3-4-577">U-3-4-5</option>
+          <option value="U-G-VG" selected>U-G-VG</option>
+          <option value="U-G">U-G</option>
+          <option value="U-3-4-5">U-3-4-5</option>
         </select>
       </div>
       <div style="display:flex;flex-direction:column;justify-content:space-between;margin:5px;">
         <label>Betygsdatum</label>
-        <input id="laddate" type="date" style="font-size:12px;">
+        <input id="laddate" type="date" style="font-size:18px;">
       </div>
       <button onclick="ladexport();">LadExport</button>
     </div>
