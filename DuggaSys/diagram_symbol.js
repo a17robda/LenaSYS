@@ -955,6 +955,31 @@ function Symbol(kind) {
 
         ctx.beginPath();
         ctx.moveTo(x1, y1);
+
+        // Test code for UML kinked lines
+        var startClass = diagram[lineStartObj].corners();
+        //var endClass = JSON.stringify(diagram[hovobj].corners());
+        var topl = startClass.tl;
+        var topr = startClass.tr;
+        var botr = startClass.br;
+        var botl = startClass.bl;
+
+        if (x1 == topl.x) {
+          //alert("Start: left");
+          ctx.lineTo(x1 - 30, y1);
+        } else if (x1 == botr.x) {
+          //alert("Start: right");
+          ctx.lineTo(x1 + 30, y1);
+        } else if (y1 == topl.y) {
+          //alert("Start: up");
+          ctx.lineTo(x1, y1 - 30);
+        } else if (y1 == botr.y) {
+          //alert("Start: bottom");
+          ctx.lineTo(x1, y1 + 30);
+        } else {
+          //alert("lolollolo");
+        }
+
         ctx.lineTo(x2, y2);
         ctx.stroke();
     }
