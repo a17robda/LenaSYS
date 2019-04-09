@@ -836,8 +836,8 @@ function returnedSection(data) {
         } else if (itemKind == 4) {
           // Moment
           var strz = makeTextArray(item['gradesys'], ["", "(U-G-VG)", "(U-G)", "(U-3-4-5)"]);
-          str += "<div class='nowrap" + hideState + "' style='margin-left:8px;display:flex;align-items:center;' title='" + item['entryname'] + "TESTNING" + "'>";
-          str += "<span class='ellipsis listentries-span'>" + item['entryname'] + " " + strz + " </span>";
+          str += "<div class='nowrap" + hideState + "' style='margin-left:8px;display:flex;align-items:center;' title='" + item['entryname'] + "'>";
+          str += "<span class='ellipsis listentries-span'>" + item['entryname'] + " ÄR DET HÄR JAG SKA ÄNDRA " + strz + " </span>";
           str += "<img src='../Shared/icons/desc_complement.svg' id='arrowComp" + arrowID + "' class='arrowComp' style='display:inline-block;'>";
           str += "<img src='../Shared/icons/right_complement.svg'" + "id='arrowRight" + arrowID + "' class='arrowRight' style='display:none;'>";
           str += "</div>";
