@@ -7,6 +7,7 @@
 // Symbol - stores a diagram symbol
 //--------------------------------------------------------------------
 function Symbol(kind) {
+    this.isForced = false;
     this.kind = 2;                  // Diagram object kind is always 2 for symbols
     this.targeted = false;
     this.symbolkind = kind;         // Symbol kind (1 UML diagram symbol 2 ER Attribute)
@@ -894,6 +895,15 @@ function Symbol(kind) {
         ctx.lineTo(x2, y2);
         ctx.lineTo(x1, y2);
         ctx.lineTo(x1, y1);
+
+        // Adding lines to make the entity weak.
+            ctx.moveTo(x1 + 10, y1 + 10);   // move to new location in the object
+            ctx.lineTo(x2 - 10, y1 + 10);   
+            ctx.lineTo(x2 - 10, y2 - 10);
+            ctx.lineTo(x1 + 10, y2 - 10);
+            ctx.lineTo(x1 + 10, y1 + 10);
+        
+
         ctx.closePath();
         this.makeShadow();
         ctx.clip();
@@ -935,9 +945,9 @@ function Symbol(kind) {
             }
         }
 
-
         ctx.lineWidth = this.lineWidth;
         if (this.key_type == "Forced") {
+            console.log("forced line - row 941");
             //Draw a thick black line
             ctx.lineWidth = this.lineWidth*3;
             ctx.beginPath();
@@ -947,6 +957,7 @@ function Symbol(kind) {
             //Draw a white line in the middle to simulate space (2 line illusion);
             ctx.lineWidth = this.lineWidth;
             ctx.strokeStyle = "#fff";
+            this.isForced = true;
         }
         else if (this.key_type == "Derived") {
             ctx.lineWidth = this.lineWidth * 2;
