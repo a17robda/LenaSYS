@@ -588,6 +588,7 @@ header td {
 .navButt {
   width: 32px;
   vertical-align: middle;
+  margin-top: 16px;
 }
 
 .navButt img {
