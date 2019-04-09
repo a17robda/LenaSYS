@@ -14,7 +14,7 @@ function Symbol(kind) {
     this.attributes = [];           // Attributes array
     this.textLines = [];                 // Free text array
     this.textsize = 14;             // 14 pixels text size is default
-    this.symbolColor = '#ffffff';   // change background colors on entities
+ //   this.symbolColor = '#ffffff';   // change background colors on entities
     this.strokeColor = '#000000';   // change standard line color
     this.font = "Arial";             // set the standard font
     this.lineWidth = 2;
@@ -42,6 +42,8 @@ function Symbol(kind) {
     this.connectorBottom = [];
     this.connectorLeft = [];
     this.connectorRight = [];
+
+    this.properties = [{"symbolColor":"#ffffff", "strokeColor":"#fff200"}];
 
     //--------------------------------------------------------------------
     // Returns the quadrant for a x,y coordinate in relation to bounding box and box center
@@ -713,7 +715,7 @@ function Symbol(kind) {
     this.draw = function () {
         ctx.lineWidth = this.lineWidth * 2;
         textsize = this.getFontsize();
-        ctx.strokeStyle = (this.targeted || this.isHovered) ? "#F82" : this.strokeColor;
+        ctx.strokeStyle = (this.targeted || this.isHovered) ? "#F82" : this.properties["strokeColor"];
 
         var x1 = points[this.topLeft].x;
         var y1 = points[this.topLeft].y;
@@ -816,7 +818,7 @@ function Symbol(kind) {
             ctx.moveTo(x1 + ((x2 - x1) * 0.5), y1 + (0.85 * this.textsize));
             ctx.lineTo(x1 + ((x2 - x1) * 0.5), y1 + (0.85 * this.textsize));
             ctx.lineTo(x1 + ((x2 - x1) * 0.5) + linelength, y1 + (0.85 * this.textsize) + 10);
-            ctx.strokeStyle = this.strokeColor;
+            ctx.strokeStyle = this.properties["strokeColor"];
             ctx.stroke();
         }
         // Change Alignment and Font
@@ -834,7 +836,7 @@ function Symbol(kind) {
     }
 
     this.drawERAttribute = function(x1, y1, x2, y2){
-        ctx.fillStyle = this.symbolColor;
+        ctx.fillStyle = this.properties["symbolColor"];
         //This is a temporary solution to the black symbol problem
         // Drawing a multivalue attribute
         if (this.key_type == 'Multivalue') {
@@ -862,7 +864,7 @@ function Symbol(kind) {
             ctx.beginPath(1);
             ctx.moveTo(x1 + ((x2 - x1) * 0.5) - (linelength * 0.5), (y1 + ((y2 - y1) * 0.5)) + 10);
             ctx.lineTo(x1 + ((x2 - x1) * 0.5) + (linelength * 0.5), (y1 + ((y2 - y1) * 0.5)) + 10);
-            ctx.strokeStyle = this.strokeColor;
+            ctx.strokeStyle = this.properties["strokeColor"];
 
         }
         ctx.stroke();
@@ -877,7 +879,7 @@ function Symbol(kind) {
     }
 
     this.drawEntity = function(x1, y1, x2, y2){
-        ctx.fillStyle = this.symbolColor;
+        ctx.fillStyle = this.properties["symbolColor"];
         ctx.beginPath();
         if (this.key_type == "Weak") {
             ctx.moveTo(x1 - 5, y1 - 5);
@@ -977,7 +979,7 @@ function Symbol(kind) {
         ctx.lineTo(x1, midy);
         ctx.lineTo(midx, y1);
 
-        ctx.fillStyle = this.symbolColor;
+        ctx.fillStyle = this.properties["symbolColor"];
         this.makeShadow();
         ctx.fill();
         ctx.closePath();
@@ -999,7 +1001,7 @@ function Symbol(kind) {
         if (this.targeted || this.isHovered) {
             ctx.lineWidth = 2;
             ctx.setLineDash([5, 4]);
-            ctx.strokeColor = "F82";
+            ctx.strokeColor = "F82"; // TODO how to do this
             ctx.rect(x1, y1, x2-x1, y2-y1);
             ctx.stroke();
         }
@@ -1038,7 +1040,7 @@ function Symbol(kind) {
 
             // Box
             svgPos = x1+","+y1+" "+x2+","+y1+" "+x2+","+y2+" "+x1+","+y2;
-            svgStyle = "fill:"+this.symbolColor+"; stroke:"+this.strokeColor+";stroke-width:"+strokeWidth+";";
+            svgStyle = "fill:"+this.properties["symbolColor"];+"; stroke:"+this.strokeColor+";stroke-width:"+strokeWidth+";";
             svgObj = "<polygon points='"+svgPos+"' style='"+svgStyle+"' />";
             str += "<clipPath id='"+this.name+symbolID+"'>"+svgObj+"</clipPath>"+svgObj;
 
@@ -1076,7 +1078,7 @@ function Symbol(kind) {
                 str += "<text "+svgPos+" style='"+svgStyle+"' text-anchor='start' dominant-baseline='hanging'>"+this.operations[i].text+"</text>";
             }
 		} else if (this.symbolkind == 2) {
-            svgStyle = "fill:"+this.symbolColor+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
+            svgStyle = "fill:"+this.properties["symbolColor"];+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
             // Outer oval for multivalued attributes
             if (this.key_type == "Multivalue") {
                 str += this.ovalToSVG(x1-7, y1-7, x2+7, y2+7, svgStyle);
@@ -1106,7 +1108,7 @@ function Symbol(kind) {
 			}
             str += "<text "+svgPos+" style='"+svgStyle+"' clip-path='url(#"+this.name+symbolID+")'>"+this.name+"</text>";
 		} else if (this.symbolkind == 3) {
-			svgStyle = "fill:"+this.symbolColor+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
+			svgStyle = "fill:"+this.properties["symbolColor"];+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
 			// Add extra box if weak entity
 			if (this.key_type == "Weak") {
 				svgPos = (x1-5)+","+(y1-5)+" "+(x2+5)+","+(y1-5)+" "+(x2+5)+","+(y2+5)+" "+(x1-5)+","+(y2+5);
@@ -1154,7 +1156,7 @@ function Symbol(kind) {
 			var midx = points[this.centerPoint].x;
 			var midy = points[this.centerPoint].y;
 			// Relation
-			svgStyle = "fill:"+this.symbolColor+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
+			svgStyle = "fill:"+this.properties["symbolColor"];+"; stroke:"+this.strokeColor+"; stroke-width:"+strokeWidth+";";
 			svgPos = midx+","+y1+" "+x2+","+midy+" "+midx+","+y2+" "+x1+","+midy+" "+midx+","+y1;
 			svgObj = "<polygon points='"+svgPos+"' style='"+svgStyle+"' />";
 			str += "<clipPath id='"+this.name+symbolID+"'>"+svgObj+"</clipPath>"+svgObj;
