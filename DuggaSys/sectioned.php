@@ -109,7 +109,7 @@
 							<input type='button' value='Access' class='submit-button' title='Give students access to the selected version' onclick='navigatePage("accessed.php");'/>
 						</div>
 					</td>
-					<td class='mail menuButton' style=''>
+					<td class='mail menuButton' style='display: inline-block;'>
 						<div class='mail menuButton'>
 							<input type='button' value='Mail' class='submit-button' title='TEST MAIL' onclick='navigatePage("accessed.php");'/>
 						</div>
