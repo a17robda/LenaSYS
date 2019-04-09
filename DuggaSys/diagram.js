@@ -24,7 +24,7 @@ var gridSize = 16;
 //var arityBuffer = gridSize / 2;
 var crossSize = 4.0;                // Size of point cross
 var tolerance = 8;                  // Size of tolerance area around the point
-var ctx;                  // Canvas context
+var ctx;                            // Canvas context
 var canvas;                         // Canvas Element
 var sel;                            // Selection state
 var currentMouseCoordinateX = 0;
@@ -46,7 +46,7 @@ var figureType = null;              // Specification of uimode, when Create Figu
 var widthWindow;                    // The width on the users screen is saved is in this var.
 var heightWindow;                   // The height on the users screen is saved is in this var.
 var consoleInt = 0;
-var sx = 0, sy = 0;         // Current X- and Y-coordinant from which the canvas start from
+var sx = 0, sy = 0;                 // Current X- and Y-coordinant from which the canvas start from
 var waldoPoint = "";
 var moveValue = 0;                  // Used to deside if the canvas should translate or not
 var activePoint = null;             // This point indicates what point is being hovered by the user
@@ -973,11 +973,15 @@ function drawGrid() {
     var quadrantX;
     var quadrantY;
 
+    quadrantX = sx;
+    quadrantY = sy;
+    /*
     if (sx < 0) quadrantX = sx;
     else quadrantX = -sx;
 
     if (sy < 0) quadrantY = sy;
     else quadrantY = -sy;
+    */
 
     for (var i = 0 + quadrantX; i < quadrantX + (widthWindow / zoomValue); i++) {
         if (i % 5 == 0) ctx.strokeStyle = "rgb(208, 208, 220)"; //This is a "thick" line
@@ -1151,10 +1155,17 @@ function removeLocalStorage() {
 // Function that rewrites the values of zoom and X & Y for the mouse-coordinates.
 //-------------------------------------------------------------------------------
 function reWrite() {
+    /*
     document.getElementById("valuesCanvas").innerHTML = "<p><b>Zoom:</b> "
      + Math.round((zoomValue * 100)) + "%" + "   |   <b>Coordinates:</b> "
      + "X=" + canvasMouseX
      + " & Y=" + canvasMouseY + "</p>";
+     */
+
+     document.getElementById("valuesCanvas").innerHTML = "<p><b>Zoom:</b> "
+     + Math.round((zoomValue * 100)) + "%" + "   |   <b>Coordinates:</b> "
+     + "X=" + sx
+     + " & Y=" + sy + "</p>";
 }
 
 //----------------------------------------
