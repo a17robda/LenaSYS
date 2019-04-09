@@ -588,13 +588,13 @@ header td {
 .navButt {
   width: 32px;
   vertical-align: middle;
-  margin-top: 16px;
 }
 
 .navButt img {
   margin-left: 10px;
   vertical-align: middle;
   height: 32px;
+  margin-top: 50px;
 }
 
 .navButt:hover {
