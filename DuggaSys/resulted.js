@@ -38,16 +38,16 @@ function setup(){
 
   /*    Add filter menu   */
   var filt ="";
-  filt+="<td id='select' class='navButt'>";
-  filt+="<img class='navButt' onclick='hoverc();' src='../Shared/icons/tratt_white.svg'>";
+  filt+="<td id='select' class='navButt'><span class='dropdown-container' onmouseover='hoverc();'>";
+  filt+="<img class='navButt' src='../Shared/icons/tratt_white.svg'>";
   filt+="<div id='dropdownc' class='dropdown-list-container' style='z-index: 1'>";
   filt+="<div id='columnfilter'></div>"
   filt+="<div id='customfilter'></div>"
   filt+="</div>";
   filt+="</span></td>";
 
-  filt+="<td id='filter' class='navButt'>";
-  filt+="<img class='navButt' onclick='hovers();' src='../Shared/icons/sort_white.svg'>";
+  filt+="<td id='filter' class='navButt'><span class='dropdown-container' onmouseover='hovers();'>";
+  filt+="<img class='navButt' src='../Shared/icons/sort_white.svg'>";
   filt+="<div id='dropdowns' class='dropdown-list-container'>";
   filt+="</div>";
   filt+="</span></td>";
@@ -60,9 +60,7 @@ function setup(){
 
 
 function resort(){
-  if(truncatedname.checked){
-      
-  }
+
 }
 
 function toggleSortDir(col){
@@ -202,12 +200,7 @@ function process()
 	var dstr="";
 
 	// Sorting
-  dstr+="<div class='checkbox-dugga' style='border-bottom:1px solid #888'>";
-  dstr+="<input type='radio' class='headercheck' name='sortdir' value='1' id='sortdir1'>";
-  dstr+="<label class='headerlabel' for='sortdir1'>Sort ascending</label>";
-  dstr+="<input name='sortdir' onclick='toggleSortDir(0)' type='radio' class='headercheck' value='-1' id='sortdir0'>";
-  dstr+="<label class='headerlabel' for='sortdir0'>Sort descending</label></div>";
-
+	dstr+="<div class='checkbox-dugga' style='border-bottom:1px solid #888'><input type='radio' class='headercheck' name='sortdir' value='1' id='sortdir1'><label class='headerlabel' for='sortdir1'>Sort ascending</label><input name='sortdir' onclick='toggleSortDir(0)' type='radio' class='headercheck' value='-1' id='sortdir0'><label class='headerlabel' for='sortdir0'>Sort descending</label></div>";
 	dstr+="<div class='checkbox-dugga'><input name='sortcol' type='radio' class='sortradio' onclick='sorttype(0)' value='0' id='sortcol0_0'><label class='headerlabel' for='sortcol0_0' >Firstname</label></div>";
 	dstr+="<div class='checkbox-dugga' ><input name='sortcol' type='radio' class='sortradio' onclick='sorttype(1)' value='0' id='sortcol0_1'><label class='headerlabel' for='sortcol0_1' >Lastname</label></div>";
 	dstr+="<div class='checkbox-dugga' style='border-bottom:1px solid #888;' ><input name='sortcol' type='radio' class='sortradio' onclick='sorttype(2)' value='0' id='sortcol0_2'><label class='headerlabel' for='sortcol0_2' >SSN</label></div>";
