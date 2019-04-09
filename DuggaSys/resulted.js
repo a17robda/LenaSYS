@@ -716,6 +716,20 @@ function createSortableTable(data){
 
 		myTable.renderTable();
 
+		// Implementing issue #5626 alternative: removing nowrap
+		// Used in tandem with removing "rtl" for the headers (in css).
+		// !HORRIBLE HORRIBLE HACK!: see root cause of this disaster at sortableTable.js:351 onwards
+		// Header id has the following form:
+		// id='"+colname+DELIMITER+tableName+DELIMITER+"tbl"'
+		// (DELIMITER is a global defined in sortableTable)
+		// Iterate over all generated headers,and remove white-space:nowrap
+		for (var columnKey in tblhead)
+		{
+			var elemID = columnKey+DELIMITER+tableName+DELIMITER+"tbl";
+			var elem = document.getElementById(elemID);
+			elem.style.whiteSpace = '';
+		}
+
 		if(data['debug']!="NONE!") alert(data['debug']);
 }
 
