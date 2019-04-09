@@ -83,7 +83,7 @@
 										<button class='submit-button menuButton access' onclick='closeWindows(); navigatePage("accessed.php");' title='Give students access to the selected version'>Access</button>
 								</li>
 								<li class='mail'>
-										<button class='submit-button menuButton access' onclick='closeWindows(); navigatePage("accessed.php");' title='TEST'>Mail</button>
+										<button class='submit-button menuButton access' onclick='mail();' title='TEST'>Mail</button>
 								</li>
 							</ul>
 						</div>

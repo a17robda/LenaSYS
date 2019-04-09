@@ -1426,3 +1426,7 @@ $(window).load(function () {
     $("#testbutton").css("background-color", "#614875");
   });
 });
+
+function mail() {
+    window.location = "mailto:xyz@abc.com";
+}
