@@ -60,9 +60,7 @@ function setup(){
 
 
 function resort(){
-  if(truncatedname=checked){
-    
-  }
+  
 }
 
 function toggleSortDir(col){
