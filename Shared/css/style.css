@@ -594,7 +594,6 @@ header td {
   margin-left: 10px;
   vertical-align: middle;
   height: 32px;
-  margin-top: 50px;
 }
 
 .navButt:hover {
@@ -2706,6 +2705,7 @@ span.arrow {
   top: 10px;
   background: #fff;
   box-shadow: 2px 2px 8px #888;
+  margin-top: 50px;
 }
 
 .dugga-result-div {
