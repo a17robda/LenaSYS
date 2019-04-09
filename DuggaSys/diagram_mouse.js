@@ -44,8 +44,16 @@ function pointDistance(point1, point2) {
 }
 
 function mousemoveevt(ev, t) {
+    console.log("clientX: " + ev.clientX);
+    console.log("clientY: " + ev.clientY);
+    testMouseX = (ev.clientX - canvas.offsetLeft) * (1 / zoomValue);
+    testMouseY = (ev.clientY - canvas.offsetTop) * (1 / zoomValue);
+    console.log("zoomValue: " + zoomValue);
+    console.log("testMouseX: " + testMouseX);
+    console.log("testMouseY: " + testMouseY);
     xPos = ev.clientX;
     yPos = ev.clientY;
+
     oldMouseCoordinateX = currentMouseCoordinateX;
     oldMouseCoordinateY = currentMouseCoordinateY;
     hovobj = diagram.itemClicked();
