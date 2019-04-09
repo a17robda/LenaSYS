@@ -33,8 +33,8 @@ var startMouseCoordinateX = 0;
 var startMouseCoordinateY = 0;
 var oldMouseCoordinateX = 0;
 var oldMouseCoordinateY = 0;
-var testMouseX = 0;
-var testMouseY = 0;
+var canvasMouseX = 0;
+var canvasMouseY = 0;
 var zoomValue = 1.00;
 var md = 0;                         // Mouse state
 var hovobj = -1;
@@ -1147,13 +1147,14 @@ function removeLocalStorage() {
         localStorage.removeItem("localdiagram");
     }
 }
-
-// Function that rewrites the values of zoom and x+y that's under the canvas element
+//-------------------------------------------------------------------------------
+// Function that rewrites the values of zoom and X & Y for the mouse-coordinates.
+//-------------------------------------------------------------------------------
 function reWrite() {
     document.getElementById("valuesCanvas").innerHTML = "<p><b>Zoom:</b> "
      + Math.round((zoomValue * 100)) + "%" + "   |   <b>Coordinates:</b> "
-     + "X=" + sx
-     + " & Y=" + sy + "</p>";
+     + "X=" + canvasMouseX
+     + " & Y=" + canvasMouseY + "</p>";
 }
 
 //----------------------------------------
