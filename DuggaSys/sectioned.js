@@ -194,7 +194,7 @@ function selectItem(lid, entryname, kind, evisible, elink, moment, gradesys, hig
 // If type "Test" or "Moment" then Grade system will be shown
 function changedType(kind) {
   // Prepares option list for code example (2)/dugga (3) dropdown/links (5) / Not applicable
-    document.querySelector("#inputwrapper-gradesystem").style.display = "none";
+  document.querySelector("#inputwrapper-gradesystem").style.display = "none";
   if (kind == 2) {
     $("#link").html(makeoptionsItem(xelink, retdata['codeexamples'], 'sectionname', 'exampleid'));
   } else if (kind == 3) {
@@ -836,7 +836,7 @@ function returnedSection(data) {
         } else if (itemKind == 4) {
           // Moment
           var strz = makeTextArray(item['gradesys'], ["", "(U-G-VG)", "(U-G)", "(U-3-4-5)"]);
-          str += "<div class='nowrap" + hideState + "' style='margin-left:8px;display:flex;align-items:center;' title='" + item['entryname'] + "'>";
+          str += "<div class='nowrap" + hideState + "' style='margin-left:8px;display:flex;align-items:center;' title='" + item['entryname'] + "TESTNING" + "'>";
           str += "<span class='ellipsis listentries-span'>" + item['entryname'] + " " + strz + " </span>";
           str += "<img src='../Shared/icons/desc_complement.svg' id='arrowComp" + arrowID + "' class='arrowComp' style='display:inline-block;'>";
           str += "<img src='../Shared/icons/right_complement.svg'" + "id='arrowRight" + arrowID + "' class='arrowRight' style='display:none;'>";
