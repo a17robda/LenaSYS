@@ -57,7 +57,7 @@
 							</button>
 						</div>
 					</td>
-					<td class='hamburger hamburgerClickable'>
+					<!-- <td class='hamburger hamburgerClickable'>
 						<div tabindex='0' class='package'>
 							<div id='hamburgerIcon' class='submit-button hamburger' onclick='hamburgerChange();bigMac();' >
 								<div class='container'>
@@ -86,7 +86,7 @@
 								</li>
 							</ul>
 						</div>
-					</td>
+					</td> -->
 
 					<td class='results menuButton' style='display: inline-block;'>
 						<div class='results menuButton'>
