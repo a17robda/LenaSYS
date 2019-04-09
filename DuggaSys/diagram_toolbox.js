@@ -65,6 +65,8 @@ function switchToolbar(direction){
     $(".buttonsStyle").hide();
     $("#linebutton").show();
     $("#classbutton").show();
+    $("#linebutton").hide();
+    $("#umllinebutton").show();
   }else if(toolbarState == 3){
     $(".toolbar-drawer").hide();
     $("#drawerDraw").show();
