@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome = 1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Section Editor</title>
+    <title>Section Editor Johan was here</title>
     <link type="text/css" href="../Shared/css/style.css" rel="stylesheet">
     <link type="text/css" href="../Shared/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <script src="../Shared/js/jquery-1.11.0.min.js"></script>
