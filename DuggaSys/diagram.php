@@ -80,7 +80,7 @@
                                     <img class="toolboxButtons" src="../Shared/icons/diagram_create_line.svg">
                                 </button>
                                 <button id='umllinebutton' onclick='setMode("CreateUMLLine");' class='buttonsStyle unpressed' data="Create UML Line">
-                                    <img class="toolboxButtons" src="../Shared/icons/diagram_create_line.svg">
+                                    <img class="toolboxButtons" src="../Shared/icons/diagram_create_umlline.svg">
                                 </button>
                             </div>
                         </div>
@@ -104,7 +104,6 @@
                                 <button id='drawtextbutton' onclick="setMode('Text');" style="display: inline; border-radius: 5px" class='buttonsStyle unpressed' data="Draw Text">
                                     <img id='textButton' src="../Shared/icons/textbox.svg" style="filter: invert(100%);">
                                 </button>
-                                
                             </div>
                         </div>
                         <h4 class="label tlabel" id="labelDraw">Draw</h4>
