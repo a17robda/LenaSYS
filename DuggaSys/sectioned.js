@@ -1428,5 +1428,5 @@ $(window).load(function () {
 });
 
 function mail() {
-    window.location = "mailto:xyz@abc.com";
+  window.open("mailto:xyz@abc.com");
 }
