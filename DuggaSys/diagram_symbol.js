@@ -43,7 +43,7 @@ function Symbol(kind) {
     this.connectorLeft = [];
     this.connectorRight = [];
 
-    this.properties = [{"symbolColor":"#ffffff", "strokeColor":"#fff200"}];
+    this.properties = {'symbolColor':'#ffffff', 'strokeColor':'#000000'};
 
     //--------------------------------------------------------------------
     // Returns the quadrant for a x,y coordinate in relation to bounding box and box center
