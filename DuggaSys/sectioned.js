@@ -1427,12 +1427,24 @@ $(window).load(function () {
   });
 });
 
-function mail() {
+function mail(cidMail, versMail) {
   // In i databasen och hämta email adresserna.
   // Tryck in email adresserna till en container (array???)
   // Skicka container till "mailto:"
 
-  
+//   var email = $('#email').val();
+
+
+  $.ajax({
+    url: "sectionedservice.php",
+    type: "POST",
+    data: {
+      "cid": cidMail,
+      "vers": versMail
+    },
+    dataType: "json",
+    success: returnedemails
+});
 
   window.location.assign("mailto:xyz@abc.com");
 }
