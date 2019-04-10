@@ -13,24 +13,24 @@ function Symbol(kind) {
     this.operations = [];           // Operations array
     this.attributes = [];           // Attributes array
     this.textLines = [];                 // Free text array
-    this.textsize = 14;             // 14 pixels text size is default
- //   this.symbolColor = '#ffffff';   // change background colors on entities
-    this.strokeColor = '#000000';   // change standard line color
-    this.font = "Arial";             // set the standard font
-    this.lineWidth = 2;
-    this.fontColor = '#000000';
+    //this.textsize = 14;             // 14 pixels text size is default
+    //this.symbolColor = '#ffffff';   // change background colors on entities
+    //this.strokeColor = '#000000';   // change standard line color
+    //this.font = "Arial";             // set the standard font
+    //this.lineWidth = 2;
+    //this.fontColor = '#000000';
     this.name = "New Class";        // Default name is new class
     this.key_type = "normal";       // Defult key tyoe for a class.
-    this.sizeOftext = "Tiny";       // Used to set size of text.
-    this.textAlign = "center";      // Used to change alignment of free text
+    //this.sizeOftext = "Tiny";       // Used to set size of text.
+    //this.textAlign = "center";      // Used to change alignment of free text
     this.topLeft;                   // Top Left Point
     this.bottomRight;               // Bottom Right Point
     this.middleDivider;             // Middle divider Point
     this.centerPoint;               // centerPoint
-    this.shadowBlur = 10;           // Shadowblur for all objects
+    //this.shadowBlur = 10;           // Shadowblur for all objects
     this.shadowOffsetX = 3;         // The horizontal distance of the shadow for the object.
     this.shadowOffsetY = 6;         // The vertical distance of the shadow for the object.
-    this.shadowColor = "rgba(0, 0, 0, 0.3)"; // The shadow color
+    //this.shadowColor = "rgba(0, 0, 0, 0.3)"; // The shadow color
     this.cardinality = [
       {"value": null, "isCorrectSide": null, "symbolKind":null}
     ];
@@ -43,7 +43,9 @@ function Symbol(kind) {
     this.connectorLeft = [];
     this.connectorRight = [];
 
-    this.properties = {'symbolColor':'#ffffff', 'strokeColor':'#000000'};
+    this.properties = {'symbolColor': '#ffffff', 'strokeColor': '#000000', 'fontColor': '#000000',
+     'font': 'Arial', 'lineWidth': '2', 'textSize': '14', 'sizeOftext': 'Tiny', 'textAlign': 'center',
+      'shadowColor': 'rgba(0, 0, 0, 0.3', 'shadowBlur': '10', };
 
     //--------------------------------------------------------------------
     // Returns the quadrant for a x,y coordinate in relation to bounding box and box center
@@ -1001,7 +1003,7 @@ function Symbol(kind) {
         if (this.targeted || this.isHovered) {
             ctx.lineWidth = 2;
             ctx.setLineDash([5, 4]);
-            ctx.strokeColor = "F82"; // TODO how to do this
+            ctx.properties['strokeColor'] = "F82"; // TODO how to do this
             ctx.rect(x1, y1, x2-x1, y2-y1);
             ctx.stroke();
         }
